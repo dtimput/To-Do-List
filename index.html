@@ -19,7 +19,7 @@
       <div class="header">To-Do List</div>
       <div class="sidebar">
         <div class="all">
-          <a href="#"><img src="img/inbox.png" />All</a>
+          <a href="#"><img src="img/all.png" />All</a>
         </div>
         <div class="today">
           <a href="#"><img src="img/today.png" />Today</a>
@@ -32,24 +32,60 @@
           <button class="addprojectbutton">+ Add Project</button>
         </div>
         <hr />
+        <div class="projects-container">
+          <div class="project-item">Cleaning</div>
+          <div class="project-item">Coding</div>
+        </div>
       </div>
       <div class="content">
         <div class="tasks">Tasks</div>
         <div class="tasks-container">
-          <div class="task">
-            <div class="left"></div>
-            <div class="right"></div>
+          <div class="task open">
+            <div class="left">
+              <img src="img/task-open.png" />
+              <div class="details">
+                <h2>Clean your Room</h2>
+                <p>dont forget soap</p>
+              </div>
+            </div>
+            <div class="right">
+              <div class="date">Feb 18 2023</div>
+              <div class="task-buttons">
+                <img src="img/edit.png" />
+                <img src="img/delete.png" />
+              </div>
+            </div>
           </div>
-          <div class="task">
+          <div class="task open">
             <div class="left"></div>
             <div class="right"></div>
           </div>
         </div>
         <div class="completed">Completed</div>
-        <div class="completed-container"></div>
-
-        <button class="addtaskbutton">+</button>
+        <div class="completed-container">
+          <div class="task complete">
+            <div class="left">
+              <img src="img/task-complete.png" />
+              <div class="details">
+                <h2>Learn to Code</h2>
+                <p>dont forget the code</p>
+              </div>
+            </div>
+            <div class="right">
+              <div class="date">Feb 18 2023</div>
+              <div class="task-buttons">
+                <img src="img/edit.png" />
+                <img src="img/delete.png" />
+              </div>
+            </div>
+          </div>
+          <div class="task complete">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+        </div>
       </div>
+      <button class="addtaskbutton">+</button>
     </div>
   </body>
 </html>
