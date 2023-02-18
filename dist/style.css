@@ -1,5 +1,5 @@
 * {
-  font-family: "Lobster", cursive;
+  font-family: "Shantell Sans", cursive;
 }
 
 body {
@@ -31,7 +31,6 @@ a > img {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Lobster", cursive;
   font-size: 60px;
   color: white;
   background-color: #7b8794;
@@ -56,7 +55,6 @@ a > img {
 .upcoming {
   color: black;
   font-size: 20px;
-  font-family: "Lobster", cursive;
   padding: 20px;
   transition: background-color 0.5s ease;
 }
@@ -74,7 +72,6 @@ a > img {
   font-size: 2vw;
   justify-content: space-around;
   align-items: center;
-  font-family: "Lobster", cursive;
 }
 
 .projects > p {
@@ -85,7 +82,6 @@ a > img {
   height: 4vh;
   width: 7vw;
   color: white;
-  font-family: "Lobster", cursive;
   background-color: #3e4c59;
   border-radius: 5px;
   border: 2px solid white;
@@ -100,6 +96,32 @@ a > img {
 hr {
   width: 90%;
   color: white;
+}
+
+.project-form > label {
+  color: white;
+}
+
+#projectname {
+  width: 70%;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 5px;
+  border: 2px solid white;
+  background-color: #3e4c59;
+}
+
+.project-form-buttons > button {
+  background-color: #3e4c59;
+  color: white;
+  border: 2px solid white;
+  border-radius: 3px;
+  transition: background-color 1s ease;
+}
+
+.project-form-buttons > button:hover {
+  background-color: white;
+  color: #3e4c59;
 }
 
 .projects-container {
@@ -127,9 +149,90 @@ hr {
   grid-row: 2 / 3;
 }
 
+.form-overlay {
+  display: flex;
+  background-color: #3e4c59;
+  box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  border: 1px solid white;
+  width: 20%;
+  height: 50%;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.task-form > h2 {
+  margin: 0;
+  margin-top: 5px;
+}
+
+.task-form > p {
+  margin: 0;
+}
+
+.task-form > input,
+.task-form > select {
+  background-color: #3e4c59;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+#taskname {
+  width: 80%;
+  text-align: center;
+}
+
+#taskdescription {
+  width: 80%;
+  height: 20%;
+  text-align: center;
+}
+
+.priority {
+  display: flex;
+  align-items: center;
+  height: 20%;
+}
+
+.priority > img {
+  width: 30%;
+  height: 40%;
+  margin: 5px;
+  padding: 3px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.priority > img:hover {
+  border: 1px solid black;
+}
+
+.task-form-buttons > button {
+  border: 2px solid white;
+  background-color: #3e4c59;
+  border-radius: 5px;
+}
+
+.task-form-buttons > button:hover {
+  background-color: white;
+  border-radius: 2px;
+}
+
 .tasks,
 .completed {
-  font-family: "Lobster", cursive;
   color: white;
   font-size: 40px;
   text-align: center;
@@ -208,7 +311,7 @@ hr {
 .addtaskbutton {
   font-size: 28px;
   font-weight: bolder;
-  background-color: #9aa5b1;
+  background-color: white;
   height: 70px;
   width: 70px;
   border-radius: 40px;
@@ -220,5 +323,5 @@ hr {
 }
 
 .addtaskbutton:hover {
-  background-color: #3e4c59;
+  background-color: #9aa5b1;
 }

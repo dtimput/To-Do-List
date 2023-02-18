@@ -13,6 +13,10 @@
       href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -33,11 +37,47 @@
         </div>
         <hr />
         <div class="projects-container">
+          <div class="add-project">
+            <form class="project-form">
+              <label for="projectname">Project Name: </label>
+              <input type="text" id="projectname" name="projectname" />
+              <div class="project-form-buttons">
+                <button>Add Project</button>
+                <button>Cancel</button>
+              </div>
+            </form>
+          </div>
           <div class="project-item">Cleaning</div>
           <div class="project-item">Coding</div>
         </div>
       </div>
       <div class="content">
+        <div class="form-overlay">
+          <form class="task-form">
+            <h2>Add Task</h2>
+            <hr />
+            <input type="text" id="taskname" value="Task Name" />
+            <input type="text" id="taskdescription" value="Description" />
+            <label for="date">Date: </label>
+            <input type="date" id="date" value="mm/dd/yyyy" />
+            <label for="Projects">Date: </label>
+            <select id="projects" name="Projects">
+              <option>All</option>
+              <option>Cleaning</option>
+              <option>Coding</option>
+            </select>
+            <p>Priority:</p>
+            <div class="priority">
+              <img src="img/green-flag.png" />
+              <img src="img/yellow-flag.png" />
+              <img src="img/red-flag.png" />
+            </div>
+            <div class="task-form-buttons">
+              <button>Add Task</button>
+              <button>Cancel</button>
+            </div>
+          </form>
+        </div>
         <div class="tasks">Tasks</div>
         <div class="tasks-container">
           <div class="task open">
