@@ -18,12 +18,38 @@
     <div class="container">
       <div class="header">To-Do List</div>
       <div class="sidebar">
-        <div class="inbox"><a href="#">Inbox</a></div>
-        <div class="today"><a href="#">Today</a></div>
-        <div class="upcoming"><a href="#">Upcoming</a></div>
-        <div class="projects"><a href="#">Projects</a></div>
+        <div class="all">
+          <a href="#"><img src="img/inbox.png" />All</a>
+        </div>
+        <div class="today">
+          <a href="#"><img src="img/today.png" />Today</a>
+        </div>
+        <div class="upcoming">
+          <a href="#"><img src="img/upcoming.png" />Upcoming</a>
+        </div>
+        <div class="projects">
+          <p>Projects</p>
+          <button class="addprojectbutton">+ Add Project</button>
+        </div>
+        <hr />
       </div>
-      <div class="content"></div>
+      <div class="content">
+        <div class="tasks">Tasks</div>
+        <div class="tasks-container">
+          <div class="task">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+          <div class="task">
+            <div class="left"></div>
+            <div class="right"></div>
+          </div>
+        </div>
+        <div class="completed">Completed</div>
+        <div class="completed-container"></div>
+
+        <button class="addtaskbutton">+</button>
+      </div>
     </div>
   </body>
 </html>
