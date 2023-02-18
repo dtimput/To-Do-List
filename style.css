@@ -9,6 +9,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+a > img {
+  width: 30px;
+  height: auto;
+  padding-right: 20px;
+}
 
 .container {
   height: 100%;
@@ -25,7 +30,7 @@ a {
   font-family: "Lobster", cursive;
   font-size: 60px;
   color: white;
-  background-color: #9aa5b1;
+  background-color: #7b8794;
   box-shadow: -3px 7px 5px -4px rgba(0, 0, 0, 0.75);
   grid-column: 1 / 3;
   grid-row: 1 / 2;
@@ -42,17 +47,111 @@ a {
   z-index: 1;
 }
 
-.sidebar > div {
-  text-align: center;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  font-family: sans-serif;
+.all,
+.today,
+.upcoming {
+  color: black;
+  font-size: 20px;
+  font-family: "Lobster", cursive;
   padding: 20px;
+  transition: background-color 0.5s ease;
+}
+
+.all:hover,
+.today:hover,
+.upcoming:hover {
+  background-color: #7b8794;
+}
+
+.projects {
+  display: flex;
+  margin-top: 40px;
+  color: white;
+  font-size: 2vw;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Lobster", cursive;
+}
+
+.projects > p {
+  margin: 0;
+}
+
+.addprojectbutton {
+  height: 4vh;
+  width: 7vw;
+  color: white;
+  font-family: "Lobster", cursive;
+  background-color: #3e4c59;
+  border-radius: 5px;
+  border: 2px solid white;
+  transition: background-color 1s ease;
+}
+.addprojectbutton:hover {
+  color: #3e4c59;
+  background-color: white;
+}
+
+hr {
+  width: 90%;
+  color: white;
 }
 
 .content {
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr 5fr;
+  position: relative;
   background-color: #1f2933;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
+}
+
+.tasks,
+.completed {
+  font-family: "Lobster", cursive;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.tasks {
+  grid-row: 1 / 2;
+}
+
+.completed {
+  grid-row: 3 / 4;
+}
+
+.tasks-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task {
+  height: 20%;
+  width: 60%;
+  border-radius: 15px;
+  border: 2px solid #e4e7eb;
+  background-color: #1f2933;
+  margin-bottom: 15px;
+}
+
+.addtaskbutton {
+  font-size: 28px;
+  font-weight: bolder;
+  background-color: #9aa5b1;
+  height: 70px;
+  width: 70px;
+  border-radius: 40px;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  transition: background-color 0.5s ease;
+  box-shadow: 5px 5px 5px -6px rgba(0, 0, 0, 0.75);
+}
+
+.addtaskbutton:hover {
+  background-color: #3e4c59;
 }
