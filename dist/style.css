@@ -13,7 +13,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
-a > img {
+.project-item > img {
   width: 30px;
   height: auto;
   padding-right: 20px;
@@ -50,18 +50,18 @@ a > img {
   z-index: 1;
 }
 
-.all,
-.today,
-.upcoming {
+#all,
+#today,
+#upcoming {
   color: black;
   font-size: 20px;
   padding: 20px;
   transition: background-color 0.5s ease;
 }
 
-.all:hover,
-.today:hover,
-.upcoming:hover {
+#all:hover,
+#today:hover,
+#upcoming:hover {
   background-color: #7b8794;
 }
 
@@ -96,6 +96,10 @@ a > img {
 hr {
   width: 90%;
   color: white;
+}
+
+.add-project {
+  display: none;
 }
 
 .project-form > label {
@@ -150,7 +154,7 @@ hr {
 }
 
 .form-overlay {
-  display: flex;
+  display: none;
   background-color: #3e4c59;
   box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
