@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,14 +22,12 @@
     <div class="container">
       <div class="header">To-Do List</div>
       <div class="sidebar">
-        <div class="all">
-          <a href="#"><img src="img/all.png" />All</a>
+        <div class="project-item" id="all"><img src="img/all.png" />All</div>
+        <div class="project-item" id="today">
+          <img src="img/today.png" />Today
         </div>
-        <div class="today">
-          <a href="#"><img src="img/today.png" />Today</a>
-        </div>
-        <div class="upcoming">
-          <a href="#"><img src="img/upcoming.png" />Upcoming</a>
+        <div class="project-item" id="upcoming">
+          <img src="img/upcoming.png" />Upcoming
         </div>
         <div class="projects">
           <p>Projects</p>
@@ -42,13 +40,11 @@
               <label for="projectname">Project Name: </label>
               <input type="text" id="projectname" name="projectname" />
               <div class="project-form-buttons">
-                <button>Add Project</button>
-                <button>Cancel</button>
+                <button class="project-submit-button">Add Project</button>
+                <button class="project-cancel-button">Cancel</button>
               </div>
             </form>
           </div>
-          <div class="project-item">Cleaning</div>
-          <div class="project-item">Coding</div>
         </div>
       </div>
       <div class="content">
@@ -57,10 +53,10 @@
             <h2>Add Task</h2>
             <hr />
             <input type="text" id="taskname" value="Task Name" />
-            <input type="text" id="taskdescription" value="Description" />
+            <input type="textarea" id="taskdescription" value="Description" />
             <label for="date">Date: </label>
-            <input type="date" id="date" value="mm/dd/yyyy" />
-            <label for="Projects">Date: </label>
+            <input type="date" id="date" value="yyyy-MM-dd" />
+            <label for="Projects">Project: </label>
             <select id="projects" name="Projects">
               <option>All</option>
               <option>Cleaning</option>
@@ -68,39 +64,18 @@
             </select>
             <p>Priority:</p>
             <div class="priority">
-              <img src="img/green-flag.png" />
-              <img src="img/yellow-flag.png" />
-              <img src="img/red-flag.png" />
+              <img class="low-priority" src="img/green-flag.png" />
+              <img class="medium-priority" src="img/yellow-flag.png" />
+              <img class="high-priority" src="img/red-flag.png" />
             </div>
             <div class="task-form-buttons">
-              <button>Add Task</button>
-              <button>Cancel</button>
+              <button class="task-form-add-button">Add Task</button>
+              <button class="task-form-cancel-button">Cancel</button>
             </div>
           </form>
         </div>
         <div class="tasks">Tasks</div>
-        <div class="tasks-container">
-          <div class="task open">
-            <div class="left">
-              <img src="img/task-open.png" />
-              <div class="details">
-                <h2>Clean your Room</h2>
-                <p>dont forget soap</p>
-              </div>
-            </div>
-            <div class="right">
-              <div class="date">Feb 18 2023</div>
-              <div class="task-buttons">
-                <img src="img/edit.png" />
-                <img src="img/delete.png" />
-              </div>
-            </div>
-          </div>
-          <div class="task open">
-            <div class="left"></div>
-            <div class="right"></div>
-          </div>
-        </div>
+        <div class="tasks-container"></div>
         <div class="completed">Completed</div>
         <div class="completed-container">
           <div class="task complete">
@@ -118,10 +93,6 @@
                 <img src="img/delete.png" />
               </div>
             </div>
-          </div>
-          <div class="task complete">
-            <div class="left"></div>
-            <div class="right"></div>
           </div>
         </div>
       </div>
