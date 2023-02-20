@@ -62,6 +62,10 @@ a {
   z-index: 1;
 }
 
+#all {
+  background-color: #7b8794;
+}
+
 #all,
 #today,
 #upcoming {
