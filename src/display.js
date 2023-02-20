@@ -1,9 +1,12 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { format, isAfter, parseISO } from "date-fns";
 import { taskStorage, removeTaskFromStorage } from "./task";
 
 const contentContainer = document.querySelector(".content");
 const projectContainer = document.querySelector(".projects-container");
 const tasksContainer = document.querySelector(".tasks-container");
 const completedContainer = document.querySelector(".completed-container");
+let selectedProject = "all";
 
 const clearDisplay = () => {
   let child = tasksContainer.lastElementChild;
@@ -111,18 +114,64 @@ function addTaskToComplete(i) {
 
 const updateDisplay = () => {
   clearDisplay();
-
-  for (let i = 0; i < taskStorage.length; i++) {
-    if (taskStorage[i].completed === false) {
-      addTaskToDisplay(i);
-    } else {
-      addTaskToComplete(i);
+  if (selectedProject === "all") {
+    for (let i = 0; i < taskStorage.length; i++) {
+      if (taskStorage[i].completed === false) {
+        addTaskToDisplay(i);
+      } else {
+        addTaskToComplete(i);
+      }
+    }
+  } else if (selectedProject === "today") {
+    const currentDate = format(new Date(), "yyyy-MM-dd");
+    for (let i = 0; i < taskStorage.length; i++) {
+      if (
+        taskStorage[i].completed === false &&
+        taskStorage[i].date === currentDate
+      ) {
+        addTaskToDisplay(i);
+      }
+      if (
+        taskStorage[i].completed === true &&
+        taskStorage[i].date === currentDate
+      ) {
+        addTaskToComplete(i);
+      }
+    }
+  } else if (selectedProject === "upcoming") {
+    const currentDate = new Date();
+    for (let i = 0; i < taskStorage.length; i++) {
+      if (
+        taskStorage[i].completed === false &&
+        isAfter(parseISO(taskStorage[i].date), currentDate)
+      ) {
+        addTaskToDisplay(i);
+      }
+      if (
+        taskStorage[i].completed === true &&
+        isAfter(parseISO(taskStorage[i].date), currentDate)
+      ) {
+        addTaskToComplete(i);
+      }
+    }
+  } else {
+    for (let i = 0; i < taskStorage.length; i++) {
+      if (
+        taskStorage[i].completed === false &&
+        taskStorage[i].project === selectedProject
+      ) {
+        addTaskToDisplay(i);
+      }
+      if (
+        taskStorage[i].completed === true &&
+        taskStorage[i].project === selectedProject
+      ) {
+        addTaskToComplete(i);
+      }
     }
   }
 };
-
 (function contentButtonListener() {
-  console.log("ping");
   contentContainer.addEventListener("click", (event) => {
     if (event.target.classList.contains("delete-task")) {
       const task = event.target.parentElement.parentElement.parentElement;
@@ -158,6 +207,15 @@ const initSideBar = () => {
 
   sidebar.addEventListener("click", (event) => {
     if (event.target.classList.contains("project-item")) {
+      const projects = document.querySelectorAll(".project-item");
+      projects.forEach((item) => {
+        // eslint-disable-next-line no-param-reassign
+        item.style.backgroundColor = "#3e4c59";
+      });
+      const project = event.target;
+      project.style.backgroundColor = "#7b8794";
+      selectedProject = project.id;
+      console.log(selectedProject);
       updateDisplay();
     } else if (event.target.classList.contains("delete-project")) {
       removeProject(event.target.parentElement);

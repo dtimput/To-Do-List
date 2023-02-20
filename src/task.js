@@ -19,6 +19,18 @@ const removeTaskFromStorage = (id) => {
   taskStorage.splice(id.id, 1);
 };
 
-export { taskStorage, CreateTask, addTaskToStorage, removeTaskFromStorage };
+const getTask = (index) => {
+  const task = taskStorage[index];
+
+  return task;
+};
+
+export {
+  taskStorage,
+  CreateTask,
+  addTaskToStorage,
+  removeTaskFromStorage,
+  getTask,
+};
 
 // Idea on how to handle task/projects. Store them in an array, and each element in the sidebar will loop through that array with the condition it calls for.
