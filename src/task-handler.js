@@ -59,13 +59,15 @@ const initTaskHandlers = () => {
     const taskDate = document.querySelector("#date").value;
     const project = document.querySelector("#projects").value;
     const taskPriority = priority;
+    const completed = false;
 
     const task = new CreateTask(
       taskName,
       taskDescription,
       taskDate,
       project,
-      taskPriority
+      taskPriority,
+      completed
     );
     addTaskToStorage(task);
     taskForm.style.display = "none";

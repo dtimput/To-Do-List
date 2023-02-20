@@ -19,6 +19,18 @@ a {
   padding-right: 20px;
 }
 
+.project-item > .delete-project {
+  width: 20px;
+  height: auto;
+  padding: 0;
+  transition: background-color 0.5s ease;
+  border-radius: 5px;
+}
+
+.project-item > .delete-project:hover {
+  background-color: #3e4c59;
+}
+
 .container {
   height: 100%;
   width: 100%;
@@ -98,10 +110,6 @@ hr {
   color: white;
 }
 
-.add-project {
-  display: none;
-}
-
 .project-form > label {
   color: white;
 }
@@ -133,9 +141,17 @@ hr {
   flex-direction: column;
 }
 
+.add-project {
+  display: none;
+}
+
 .projects-container > div {
   font-size: 20px;
   padding: 20px;
+  text-align: center;
+  display: flex;
+  color: white;
+  justify-content: space-around;
   text-align: center;
   transition: background-color 0.5s ease;
 }

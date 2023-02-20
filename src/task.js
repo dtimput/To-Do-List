@@ -1,22 +1,23 @@
 const taskStorage = [];
 
 class CreateTask {
-  constructor(name, description, date, project, priority) {
+  constructor(name, description, date, project, priority, completed) {
     this.name = name;
     this.description = description;
     this.date = date;
     this.project = project;
     this.priority = priority;
+    this.completed = completed;
   }
 }
-
-// const example = new CreateTask("Clean your Room", "Don't forget Soap", date, project, "low");
 
 const addTaskToStorage = (task) => {
   taskStorage.push(task);
 };
 
-const removeTaskFromStorage = (task) => {};
+const removeTaskFromStorage = (id) => {
+  taskStorage.splice(id.id, 1);
+};
 
 export { taskStorage, CreateTask, addTaskToStorage, removeTaskFromStorage };
 
